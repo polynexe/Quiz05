@@ -3,6 +3,11 @@ import FormContainer from '../components/FormContainer'
 import { Form } from 'react-bootstrap'
 
 function LoginScreen() {
+    const submitHandler = (e) => {
+        e.preventDefault()
+        console.log('Form submitted')
+    }
+
   return (
     <FormContainer>
         <div className='text-center mb-4'>
@@ -10,7 +15,7 @@ function LoginScreen() {
             <p>Please Sign In to your account</p>
         </div>
 
-        <Form>
+        <Form onSubmit={submitHandler}>
             <Form.Group controlId='email' className='mb-3'>
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control
